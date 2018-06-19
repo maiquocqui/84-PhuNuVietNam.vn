@@ -1,0 +1,16 @@
+extends _layout/layout
+
+block variables
+	- var title = 'Home'
+	- var description = 'Description for home page'
+	- var bodyclass = ''
+	- var selected = 'Home';
+	- var href = '';
+
+block css
+
+block body
+	include _layout/header
+	main
+		include _pages/ct-tintucct
+	include _layout/footer

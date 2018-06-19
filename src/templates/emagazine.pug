@@ -1,0 +1,17 @@
+extends _layout/layout
+
+block variables
+	- var title = 'Home'
+	- var description = 'Description for home page'
+	- var bodyclass = 'emagazine'
+	- var selected = 'Home';
+	- var href = '';
+
+block css
+
+block body
+	//- include _layout/header
+	//- include _layout/banner
+	main
+		include _pages/ct-emagazine
+	//- include _layout/footer

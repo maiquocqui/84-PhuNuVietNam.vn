@@ -1,0 +1,947 @@
+
+.news-list
+	.news-col
+		margin-bottom: 15px
+		padding-bottom: 15px
+		border-bottom: 1px dashed darken($white,10%)
+		&:last-child
+			margin-bottom: 0
+			padding-bottom: 0
+			border-bottom: none
+		.news-cate
+			display: inline-block
+			padding: 7px 13px
+			background: $orangegradient
+			// +bor-rad(3px)
+			color: $white
+			+fs(13rem)
+			font-weight: 500
+			// text-transform: uppercase
+			line-height: 1
+			+media-breakpoint-down(lg)
+				+fs(10rem)
+				padding: 3px 10px
+		figure
+			+flexbox
+			.news-img
+				display: block
+				width: 180px
+				overflow: hidden
+				+pos(rel,null)
+				+media-breakpoint-down(lg)
+					width: 100px
+				img
+					width: 100%
+					+transition(all,10s)
+				.news-cate
+					+pos(abs, null null 15px 15px)
+					display: none
+			figcaption
+				width: calc(100% - 180px)
+				padding-left: 15px
+				+media-breakpoint-down(lg)
+					width: calc(100% - 100px)
+				.news-name
+					a
+						display: block
+						color: $main
+						+fs(20rem)
+						line-height: 1.3
+						font-weight: 700
+						+media-breakpoint-down(lg)
+							+fs(16rem)
+							display: -webkit-box
+							line-height: 1.3
+							// max-height: 0.8125rem*1.3*2
+							// -webkit-line-clamp: 2
+							// -webkit-box-orient: vertical
+							// overflow: hidden
+							// text-overflow: ellipsis
+							margin-bottom: 5px
+						+media-breakpoint-down(sm)
+							margin-bottom: 0
+					&.video
+						a
+							&:after
+								content: '\f03d'
+								font-weight: normal
+								margin-left: 5px
+								color: darken($white,40%)
+								+fs(14rem)
+								vertical-align: middle
+					&.gallery
+						a
+							&:after
+								content: '\f03e'
+								font-weight: normal
+								margin-left: 5px
+								color: darken($white,40%)
+								+fs(14rem)
+								vertical-align: middle
+				time 
+					+fs(12rem)
+					color: darken($white,40%)
+					+media-breakpoint-down(lg)
+						+fs(10rem)
+					&:before
+						content: '\f017'
+						margin-right: 5px
+				.news-des
+					+fs(15rem)
+					// font-weight: 500
+					line-height: 1.5
+					color: darken($white,60%)
+					display: -webkit-box
+					height: 0.9375rem*1.5*4
+					-webkit-line-clamp: 4
+					-webkit-box-orient: vertical
+					overflow: hidden
+					text-overflow: ellipsis
+					+media-breakpoint-down(lg)
+						+fs(12rem)
+						height: 0.75rem*1.5*3
+		&.big
+			+media-breakpoint-down(sm)
+				margin-bottom: 15px
+				padding-bottom: 15px
+				border-bottom: 1px dashed darken($white,10%)
+			figure
+				flex-wrap: wrap
+				.news-img
+					width: 100%
+				figcaption
+					width: 100%
+					padding-left: 0
+					padding: 15px 0 0
+					.news-name
+						a
+							+fs(28rem)
+							// display: -webkit-box
+							// max-height: 1.5rem*1.5*2
+							// -webkit-line-clamp: 2
+							// -webkit-box-orient: vertical
+							// overflow: hidden
+							// text-overflow: ellipsis
+							+media-breakpoint-down(lg)
+								+fs(18rem)
+								// max-height: 0.9375rem*1.3*2
+					.news-des
+						margin-top: 7px
+						+media-breakpoint-down(lg)
+							margin-top: 10px
+		&:hover
+			figure
+				.news-img
+					// filter: brightness(120%)
+					img
+						+transform(scale3d(1.2,1.2,1))
+				figcaption
+					.news-name
+						a
+							color: $dblue
+	&.news-list2
+		+media-breakpoint-down(sm)
+			margin-bottom: -30px
+		.news-col
+			+media-breakpoint-down(sm)
+				margin-bottom: 15px
+				padding-bottom: 15px
+				border-bottom: 1px dashed darken($white,10%)
+			&.big
+				border-bottom: 1px dashed darken($white,10%)
+				margin-bottom: 15px
+				padding-bottom: 15px
+				figure
+					+media-breakpoint-down(sm)
+						flex-wrap: wrap
+					.news-img
+						width: 45%
+						+media-breakpoint-down(sm)
+							width: 100%
+					figcaption
+						width: 55%
+						padding: 0 0 0 20px
+						+media-breakpoint-down(sm)
+							width: 100%
+							padding: 10px 0 0
+						.news-cate
+							display: none
+							margin-bottom: 5px
+	&.news-list3
+		.news-col
+			margin: 0px 0px 20px
+			padding-bottom: 0
+			border-bottom: none
+			+media-breakpoint-down(sm)
+				margin-bottom: 0
+			&:last-child
+				margin-bottom: 0
+			figure
+				flex-wrap: wrap
+				+pos(rel,null)
+				.news-img
+					width: 100%
+					height: 270px
+					overflow: hidden
+					+flexbox
+					justify-content: center
+					align-items: center
+					+media-breakpoint-down(lg)
+						height: 200px
+					img
+						height: 100%
+						width: auto
+						max-width: unset
+				figcaption
+					width: 100%
+					+pos(abs, null 0 0 0)
+					padding: 15px
+					z-index: 1
+					background: linear-gradient(color-rgba($black,0),color-rgba($black,0.8))
+					.news-cate
+						margin-bottom: 5px
+						display: none
+					.news-name
+						a
+							color: $white
+							+fs(28rem)
+							max-height: unset
+							+media-breakpoint-down(lg)
+								+fs(18rem)
+					time
+						color: $white
+						opacity: 0.8
+			&.big
+				figure
+					.news-img
+						height: 560px
+						+media-breakpoint-down(lg)
+							height: 420px
+						img
+							object-fit: cover
+							height: 100%
+							width: 100%
+							max-width: unset
+					figcaption
+						.news-name
+							a
+								+fs(32rem)
+								+media-breakpoint-down(lg)
+									+fs(24rem)
+	&.news-list4
+		margin-bottom: -20px
+		.col-12
+			margin-bottom: 20px
+		.news-col
+			background: $white
+			height: 100%
+			margin: 0
+			// box-shadow: 0px 3px 10px color-rgba($black,0.05)
+			figure
+				flex-wrap: wrap
+				.news-img
+					display: block
+					width: 100%
+				figcaption
+					width: 100%
+					padding: 20px 25px
+					+media-breakpoint-down(sm)
+						padding: 15px
+					.news-name
+						a
+							+fs(24rem)
+							// height: 1.5rem*1.5*2
+							+media-breakpoint-down(lg)
+								+fs(18rem)
+					time
+						display: block
+						margin-bottom: 10px
+	&.news-list5
+		.news-col
+			border-bottom: none
+			margin-bottom: 10px
+			padding-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+				padding-bottom: 0
+			figure
+				figcaption
+					.news-name
+						margin-bottom: 0
+						a
+							margin-bottom: 0
+			&.big
+				margin: -20px -20px 10px
+				figure
+					+pos(rel,null)
+					figcaption
+						+pos(abs, null 0 0 0)
+						padding: 15px
+						z-index: 1
+						background: linear-gradient(color-rgba($black,0),color-rgba($black,0.8))
+						.news-cate
+							margin-bottom: 3px
+							display: none
+						.news-name
+							+fs(16rem)
+							margin-bottom: 0
+							a
+								color: $white
+								// height: 1rem*1.3*2
+								+media-breakpoint-down(lg)
+									+fs(18rem)
+									// height: 0.875rem*1.3*2
+									margin-bottom: 0
+						time
+							color: $white
+							opacity: 0.8
+	&.news-list6
+		// box-shadow: 0px 3px 10px color-rgba($black,0.05)
+		.news-col
+			figure
+				+pos(rel,null)
+				.news-img
+					+flexbox
+					justify-content: center
+					overflow: hidden
+					width: 100%
+					+media-breakpoint-down(md)
+						display: block
+					img
+						width: 100%
+						max-width: 100%
+						+media-breakpoint-up(lg)
+							height: 550px
+							width: auto
+							max-width: unset
+				figcaption
+					width: 100%
+					+pos(abs, null 0 0 0)
+					padding: 15px
+					z-index: 1
+					background: linear-gradient(color-rgba($black,0),color-rgba($black,0.8))
+					.news-cate
+						margin-bottom: 5px
+					.news-name
+						margin-bottom: 10px
+						a
+							display: -webkit-box
+							+fs(28rem)
+							color: $white
+							// max-height: 1.5rem*1.5*2
+							// -webkit-line-clamp: 2
+							// -webkit-box-orient: vertical
+							// overflow: hidden
+							// text-overflow: ellipsis
+							+media-breakpoint-down(lg)
+								+fs(24rem)
+					time
+						color: $white
+						opacity: 0.8
+	&.news-list7
+		.news-col
+			margin: 0
+			padding: 0
+			border: none
+			background: $white
+			// box-shadow: 0px 3px 10px color-rgba($black,0.05)
+			margin-bottom: 20px
+			figure
+				+media-breakpoint-down(sm)
+					flex-wrap: wrap
+				.news-img
+					width: 50%
+					+media-breakpoint-down(lg)
+						width: 45%
+					+media-breakpoint-down(sm)
+						width: 100%
+					img
+						+media-breakpoint-down(lg)
+							height: 100%
+							object-fit: cover
+				figcaption
+					width: 50%
+					padding: 30px
+					+media-breakpoint-down(lg)
+						width: 55%
+						padding: 20px
+					+media-breakpoint-down(sm)
+						width: 100%
+						padding: 15px
+					.news-cate
+						margin-bottom: 5px
+					.news-name
+						margin-bottom: 10px
+						+media-breakpoint-down(lg)
+							margin-bottom: 0
+						a
+							height: auto
+							+fs(24rem)
+							+media-breakpoint-down(lg)
+								+fs(18rem)
+							// max-height: 1.5rem*1.5*2
+	&.news-list8
+		.news-col
+			figure
+				flex-wrap: wrap
+				.news-img
+					width: 100%
+				figcaption
+					width: 100%
+					padding: 15px 0
+					.news-name
+						margin-bottom: 10px
+						a
+							+fs(15rem)
+							font-weight: 500
+					.news-des
+						+fs(11rem)
+						display: none
+	&.news-list9
+		article
+			margin-bottom: 30px
+		.news-col
+			figure
+				flex-wrap: wrap
+				.news-img
+					width: 100%
+				figcaption
+					width: 100%
+					padding: 10px 0
+
+.sidebar-news
+	margin-bottom: 30px
+	.video-list
+		.video
+			display: block
+			padding: 10px 0
+			figure
+				+flexbox
+				.video-img
+					width: 120px
+				figcaption
+					width: calc(100% - 120px)
+					padding-left: 15px
+					.video-name
+						+fs(15rem)
+						font-weight: 600
+						color: $main
+.post-list
+	padding: 10px
+	background: $white
+	// box-shadow: 0px 3px 10px color-rgba($black,0.05)
+	.post
+		margin-bottom: 10px
+		padding-bottom: 10px
+		border-bottom: 1px dashed darken($white,10%)
+		&:last-child
+			margin-bottom: 0
+			padding-bottom: 0
+			border-bottom: none
+		figure
+			+flexbox
+			.post-img
+				display: block
+				width: 120px
+			figcaption
+				width: calc(100% - 120px)
+				padding-left: 10px
+				.post-name
+					a
+						display: block
+						color: $main
+						+fs(14rem)
+						font-weight: 700
+						line-height: 1.3
+						&:hover
+							color: $dblue
+	&.post-list2
+		padding: 20px
+		+media-breakpoint-down(lg)
+			padding: 15px
+		.post
+			margin-bottom: 15px
+			padding-bottom: 15px
+			&:last-child
+				margin-bottom: 0
+				padding-bottom: 0
+			.post-name
+				a
+					display: block
+					color: $main
+					+fs(18rem)
+					font-weight: 700
+					line-height: 1.3
+					+media-breakpoint-down(lg)
+						+fs(15rem)
+					&:hover
+						color: $dblue
+			time
+				+fs(13rem)
+				color: darken($white,40%)
+				&:before
+					content: '\f017'
+					margin-right: 5px
+			&:hover
+				.post-name
+					color: $dblue
+
+.sidebar-newspaper
+	margin-bottom: 30px
+	+media-breakpoint-down(md)
+		display: none
+	.newspaper-list
+		background: $white
+		padding: 20px
+		// box-shadow: 0px 3px 10px color-rgba($black,0.05)
+		// .newspaper
+		// 	margin-bottom: 20px
+		// 	padding-bottom: 20px
+		// 	border-bottom: 1px dashed darken($white,10%)
+		// 	+pos(rel,null)
+		// 	&:before
+		// 		content: ''
+		// 		font-family: 'montserrat'
+		// 		display: block
+		// 		width: 30px
+		// 		height: 30px
+		// 		line-height: 30px
+		// 		text-align: center
+		// 		color: $white
+		// 		+fs(13rem)
+		// 		+bor-rad(3px)
+		// 		font-weight: 500
+		// 		background: $orangegradient
+		// 		+pos(abs, -10px null null -10px)
+		// 	&:nth-child(1)
+		// 		&:before
+		// 			content: '1'
+		// 	&:nth-child(2)
+		// 		&:before
+		// 			content: '2'
+		// 	&:nth-child(3)
+		// 		&:before
+		// 			content: '3'
+		// 	&:nth-child(4)
+		// 		&:before
+		// 			content: '4'
+
+		// 	&:last-child
+		// 		margin-bottom: 0
+		// 		padding-bottom: 0
+		// 		border-bottom: none
+		figure
+			.news-img
+				+flexbox
+				justify-content: center
+				align-items: center
+				align-content: center
+				height: 350px
+				+media-breakpoint-down(lg)
+					height: 200px
+				img
+					max-width: 100%
+					max-height: 100%
+			figcaption
+				padding: 10px 0px 0
+				+fs(18rem)
+				font-weight: 700
+				color: $main
+				text-align: center
+				font-family: 'roboto condensed'
+	.newspaper-nav
+		padding: 0px 15px 20px
+		background: $white
+		+flexbox
+		.slick-track
+			+flexbox
+			.slick-slide
+				div
+					height: 100%
+				.item
+					height: 100%
+		.item
+			padding: 0px 5px
+			cursor: pointer
+			flex: 1
+			img
+				filter: grayscale(100%)
+		.slick-current
+			.item
+				img
+					filter: grayscale(0%)
+		.active
+			img
+				filter: grayscale(0%)
+.newspaper-book
+	background: $orangegradient
+	color: $white
+	text-align: center
+	+fs(14rem)
+	font-weight: 500
+	padding: 10px 0
+	margin-bottom: 30px
+	box-shadow: 0px 3px 10px color-rgba($black,0.05)
+	a
+		color: $white
+		font-weight: 700
+		&:hover
+			color: $white
+			text-decoration: underline
+.sidebar-video
+	margin-bottom: 30px
+	.video
+		margin-bottom: 10px
+		padding-bottom: 10px
+		border-bottom: 1px dashed darken($white,10%)
+		&:last-child
+			margin-bottom: 0
+			padding-bottom: 0
+			border-bottom: none
+		figure
+			+flexbox
+			.video-img
+				display: block
+				width: 80px
+				overflow: hidden
+				+pos(rel,null)
+				&:before
+					content: '\f04b'
+					+pos(abs, 0 null 0 0)
+					right: 0
+					background: color-rgba($black,0.2)
+					color: $white
+					+flexbox
+					justify-content: center
+					align-items: center
+					+fs(18rem)
+					z-index: 5
+				img
+					width: 100%
+					+transition(all,10s)
+			figcaption
+				width: calc(100% - 100px)
+				padding-left: 10px
+				.video-name
+					a
+						display: block
+						color: $main
+						+fs(12rem)
+						line-height: 1.3
+						font-weight: 500
+						&:hover
+							color: $dblue
+			&:hover
+				.video-img
+					filter: brightness(120%)
+					img
+						+transform(scale3d(1.2,1.2,1))
+				figcaption
+					.video-name
+						a
+							color: $dblue
+		&.big
+			figure
+				flex-wrap: wrap
+				.video-img
+					width: 100%
+					&:before
+						content: '\f04b'
+						display: block
+						+pos(abs, 50% unset unset 0)
+						+transform(translate(0,-50%))
+						width: 80px
+						height: 60px
+						+flexbox
+						justify-content: center
+						align-items: center
+						+fs(24rem)
+						background: linear-gradient(-225deg, color-rgba($lpink,0.8) 0%,  color-rgba($dblue,0.8) 100%)
+				figcaption
+					width: 100%
+					padding: 10px 0 0
+					.video-name
+						a
+							+fs(14rem)
+							font-weight: 500
+
+// NEWS DETAIL PAGE
+.news-page
+	margin: 0 0 30px
+	.news-list7
+		margin-bottom: 30px
+	.news-info
+		margin-bottom: 30px
+		figure
+			+pos(rel,null)
+			.news-img
+				+media-breakpoint-down(sm)
+					display: none
+				img
+					width: 100%
+			figcaption
+				+pos(abs, null 0 0 0)
+				padding: 25px 160px 25px 30px
+				background: linear-gradient(color-rgba($black,0),color-rgba($black,0.7))
+				+media-breakpoint-down(lg)
+					padding: 20px 150px 20px 20px
+				+media-breakpoint-down(sm)
+					padding: 0px 0px 15px
+					+pos(static,unset)
+					background: none
+					text-shadow: none
+					border-bottom: 1px solid darken($white,10%)
+				.news-cate
+					display: inline-block
+					padding: 5px 13px
+					background: $orangegradient
+					// +bor-rad(3px)
+					color: $white
+					+fs(13rem)
+					font-weight: 500
+					line-height: 1
+					margin-bottom: 5px
+				.news-name
+					+fs(36rem)
+					font-weight: 700
+					color: $white
+					text-shadow: 0px 5px 10px color-rgba($black,0.3)
+					+media-breakpoint-down(lg)
+						+fs(24rem)
+					+media-breakpoint-down(sm)
+						color: $main
+						text-shadow: none
+				time
+					display: block
+					+fs(13rem)
+					color: $white
+					opacity: 0.8
+					margin-bottom: 5px
+					+media-breakpoint-down(lg)
+						+fs(12rem)
+					+media-breakpoint-down(sm)
+						color: darken($white,40%)
+				.qr-code
+					+pos(abs,null 30px 25px null)
+					background: $white
+					padding-top: 10px
+					+media-breakpoint-down(sm)
+						display: none
+					.label
+						+fs(11rem)
+						text-align: center
+						color: $main
+					.code-img
+						width: 130px
+						+media-breakpoint-down(lg)
+							width: 100px
+						img
+	.video-title
+		+fs(32rem)
+		font-family: 'roboto condensed'
+		font-weight: 700
+		margin-bottom: 10px
+		+media-breakpoint-down(lg)
+			+fs(24rem)
+	.video-detail
+		+fs(14rem)
+		color: darken($white,60%)
+		.author
+		time
+			display: inline-block
+			+fs(14rem)
+			&:before
+				content: '\f017'
+				margin-right: 5px
+		.date
+			display: inline-block
+			+fs(14rem)
+			&:before
+				content: '\f073'
+				margin-right: 5px
+
+.news-detail
+	.news-des
+		font-weight: 500
+		margin: 15px 0
+	.content
+		margin-bottom: 15px
+	.news-ralated
+		border: 1px solid darken($white,10%)
+		+bor-rad(5px)
+		padding: 10px 15px
+		margin-bottom: 20px
+		border-left: 5px solid $lpurple
+		ul
+			list-style-type: disc
+			padding-left: 15px
+			color: $red
+			li
+				color: $red
+				a
+					+fs(13rem)
+					color: $main
+					&:hover
+						color: $red
+	.author
+		text-align: right
+		+fs(14rem)
+		font-weight: 500
+		color: $main
+		margin-bottom: 20px
+	.share
+		border-top: 1px dashed darken($white,10%)
+		border-bottom: 1px dashed darken($white,10%)
+		padding: 15px 0
+		margin-bottom: 20px
+.key-word
+	margin-bottom: 30px
+	label
+		+fs(13rem)
+		font-weight: 700
+		margin-right: 10px
+		&:before
+			content: '\f02c'
+			font-weight: 400
+			margin-right: 5px
+	a
+		display: inline-block
+		+fs(12rem)
+		color: $white
+		background: darken($white,40%)
+		padding: 2px 7px
+		+bor-rad(3px)
+		margin-right: 10px
+		margin-bottom: 5px
+		&:hover
+			background: darken($white,60%)
+.news-comment
+	+bor-rad(5px)
+	overflow: hidden
+	border: 1px solid darken($white,10%)
+	.module-title
+		+fs(14rem)
+		font-weight: 500
+		background: darken($white,3%)
+		border-bottom: 1px solid darken($white,10%)
+		line-height: 40px
+		padding: 0px 15px
+		&:before
+			content: '\f0e6'
+			margin-right: 5px
+			font-weight: normal
+	.form-wrap
+		padding: 15px
+	.form-group
+		textarea
+			width: 100%
+			border: 1px solid darken($white,10%)
+			padding: 10px
+			background: $white
+	input[type="submit"]
+		+mainbutton
+		background: $orangegradient !important
+		text-transform: none
+		+fs(14rem)
+		color: $white
+		+bor-rad(50px)
+		&:hover
+			filter: brightness(100%)
+			background: $orangegradient
+			box-shadow: 0px 10px 20px -10px $red
+.news-other
+	margin-bottom: 30px
+
+.pages
+	ul.pagination
+		li
+			+ li
+				margin-left: 10px
+			a
+				display: block
+				width: 40px
+				height: 40px
+				+bor-rad(50px)
+				background: darken($white,5%)
+				line-height: 40px
+				+fs(14rem)
+				text-align: center
+			&.active
+				a
+					background: $bluegradient
+					color: $white
+					font-weight: 700
+
+.video-page
+	background: $grey
+	margin-bottom: 30px
+	margin-top: -15px
+	+media-breakpoint-down(sm)
+		margin: -30px -15px 30px
+	.video-play
+		iframe
+			+media-breakpoint-down(lg)
+				height: 350px
+			+media-breakpoint-down(md)
+				height: 400px
+			+media-breakpoint-down(sm)
+				height: 250px
+	.video-related
+		// height: 100%
+		.module-title
+			+fs(15rem)
+			font-weight: 600
+			text-transform: uppercase
+			color: $white
+			line-height: 50px
+			padding: 0px 20px
+			background: color-rgba($white,0.1)
+			+media-breakpoint-down(lg)
+				line-height: 40px
+			+media-breakpoint-down(sm)
+				line-height: 36px
+		.video-list
+			max-height: 450px
+			overflow: auto
+			+media-breakpoint-down(lg)
+				max-height: 310px
+			+media-breakpoint-down(md)
+				max-height: 300px
+			+media-breakpoint-down(sm)
+				max-height: unset
+			&::-webkit-scrollbar-track
+				background-color: $grey
+			&::-webkit-scrollbar
+				width: 5px
+				background-color: $grey
+			&::-webkit-scrollbar-thumb
+				background-color: color-rgba($white,0.5)
+				border: none
+			.video
+				display: block
+				padding: 15px 20px
+				&:hover
+					background: color-rgba($white,0.05)
+				figure
+					+flexbox
+					flex-wrap: wrap
+					.video-img
+						display: block
+						width: 120px
+						+media-breakpoint-down(lg)
+							width: 100px
+						img
+							width: 100%
+					figcaption
+						width: calc(100% - 120px)
+						padding-left: 15px
+						+media-breakpoint-down(lg)
+							width: calc(100% - 100px)
+						.video-name
+							+fs(15rem)
+							line-height: 1.5
+							font-weight: 600
+							color: $white
+							font-family: 'roboto'
+							+media-breakpoint-down(lg)
+								+fs(13rem)

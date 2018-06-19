@@ -1,0 +1,23 @@
+.breadcrumb-wrap
+	background: darken($white,3%)
+	margin-bottom: 30px
+	ol.breadcrumb
+		margin: 0
+		padding: 10px 0
+		background: none
+		+bor-rad(0)
+		+fs(13rem)
+		li
+			&:before
+				content: '\f105'
+				margin: 0px 10px
+			&:first-child
+				&:before
+					display: none
+				a
+					+fs(0)
+					&:before
+						content: '\f015'
+						+fs(13rem)
+			a
+				color: darken($white,60%)

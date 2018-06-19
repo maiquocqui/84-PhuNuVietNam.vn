@@ -1,0 +1,434 @@
+
+@keyframes hotline-animate
+	0%
+		+transform(scale3d(1.3,1.3,1.3))
+		opacity: 0.5
+	100%
+		+transform(scale3d(2.2,2.2,2.2))
+		opacity: 0
+@keyframes phone-ring
+	0%
+		transform: rotate(0deg) scale(1) skew(1deg)
+	5%
+		transform: rotate(-25deg) scale(1) skew(1deg)
+	10%
+		transform: rotate(25deg) scale(1) skew(1deg)
+	15%
+		transform: rotate(-25deg) scale(1) skew(1deg)
+	20%
+		transform: rotate(25deg) scale(1) skew(1deg)
+	25%
+		transform: rotate(0deg) scale(1) skew(1deg)
+	100%
+		transform: rotate(0deg) scale(1) skew(1deg)
+
+body
+	+media-breakpoint-down(lg)
+		padding-top: 60px
+header
+	background: $white
+	+media-breakpoint-down(lg)
+		+pos(fix, 0 0 null 0)
+		z-index: 1000
+	.header-top
+		background: darken($white,5%)
+		// border-bottom: 1px solid darken($white,15%)
+	.search-wrap
+		padding: 5px 0
+		float: left
+		+media-breakpoint-down(lg)
+			float: right
+			width: calc(100% - 350px)
+			padding: 14px 0
+		+media-breakpoint-down(sm)
+			+pos(abs, 100% 0 null 0)
+			width: unset
+			background: darken($white,5%)
+			padding: 10px 15px
+			display: none
+		.searchbox
+			+flexbox
+			width: 300px
+			background: $white
+			+bor-rad(5px)
+			border: 1px solid darken($white,15%)
+			+media-breakpoint-down(lg)
+				width: 100%
+			input
+				margin: 0
+				padding: 0 15px
+				background: none
+				border: none
+				width: calc(100% - 28px)
+				+fs(13rem)
+			.searchbutton
+				width: 30px
+				height: 30px
+				line-height: 28px
+				text-align: center
+				color: $main
+				+fs(14rem)
+	.hotline
+		+fs(14rem)
+		float: left
+		font-weight: 500
+		line-height: 40px
+		+media-breakpoint-down(lg)
+			+fs(0)
+			line-height: 1
+		.fa
+			line-height: 1
+		a
+			color: $main
+			font-weight: 700
+			+fs(15rem)
+			+media-breakpoint-down(lg)
+				+pos(fix, null 30px 30px null)
+				z-index: 100
+				+fs(0)
+				line-height: 1
+				&:before
+					content: '\f095'
+					font-family: 'fontawesome'
+					+fs(28rem)
+					display: block
+					font-weight: normal
+					width: 50px
+					height: 50px
+					line-height: 50px
+					text-align: center
+					// background: linear-gradient(135deg,$blue,$menu)
+					background: $orangegradient
+					// opacity: 0.9
+					color: color-rgba($white,1)
+					+bor-rad(50px)
+					text-shadow: none
+					// box-shadow: 0px 10px 20px -10px color-rgba($black,0.3)
+					+pos(rel,null)
+					z-index: 1
+					animation-name: phone-ring
+					animation-duration: 2s
+					animation-iteration-count: infinite
+				&:after
+					content: ''
+					display: block
+					+pos(abs, 0 null 0 0)
+					right: 0
+					background: $orangegradient
+					opacity: 0.5
+					+bor-rad(50px)
+					+transform(scale3d(1.3,1.3,1.3))
+					animation-name: hotline-animate
+					animation-duration: 1s
+					animation-iteration-count: infinite
+			&:hover
+				color: $dblue
+	.login
+		margin-left: 20px
+		display: none
+		+media-breakpoint-down(lg)
+			width: 100%
+			padding: 15px 20px
+			margin: 0
+		ul
+			+flexbox
+			padding: 5px 0
+			+media-breakpoint-down(lg)
+				width: 100%
+				padding: 0
+			li
+				+media-breakpoint-down(lg)
+					width: calc((100% - 10px)/2)
+				+ li
+					margin-left: 5px
+					+media-breakpoint-down(lg)
+						margin-left: 10px
+				a
+					display: block
+					+fs(13rem)
+					font-weight: 500
+					text-transform: uppercase
+					color: $white
+					line-height: 30px
+					padding: 0px 15px
+					+bor-rad(5px)
+					+media-breakpoint-down(lg)
+						text-align: center
+						+fs(14rem)
+						text-transform: uppercase
+						padding: 10px 0
+						line-height: 20px
+				&:nth-child(1)
+					a
+						background: $orangegradient
+				&:nth-child(2)
+					a
+						background: $bluegradient
+				// text-transform: uppercase
+	.col-right
+		float: right
+		+flexbox
+		flex-wrap: wrap
+	.header-main
+		background: $white
+		.sitelogo
+			height: 120px
+			+flexbox
+			align-items: center
+			align-content: center
+			float: left
+			a
+				display: block
+			img
+				height: 80px
+			+media-breakpoint-down(lg)
+				float: left
+				height: auto
+				padding: 15px 0
+				a
+					display: block
+					overflow: hidden
+					height: 30px
+					img
+						height: 40px
+		.search-toggle
+			display: block
+			+media-breakpoint-up(md)
+				display: none
+		.search-wrap
+			display: none
+			+media-breakpoint-up(md)
+				display: block
+			+media-breakpoint-up(xl)
+				display: none
+		.banner-ad
+			height: 120px
+			+flexbox
+			align-items: center
+			align-content: center
+			+media-breakpoint-down(lg)
+				display: none
+			a
+				display: block
+	.btn-showmenu
+
+	.header-menu
+		box-shadow: 0px 10px 30px -10px color-rgba($black,0.2)
+		+pos(rel,null)
+		z-index: 1
+		background: darken($white,3%)
+		+media-breakpoint-down(lg)
+			+pos(static,unset)
+			background: $white
+	.btn-showmenu
+		display: none
+		float: left
+		width: 30px
+		height: 30px
+		margin: 15px 15px 15px 0
+		background: $bluegradient
+		color: $white
+		+fs(18rem)
+		line-height: 30px
+		text-align: center
+		+media-breakpoint-down(lg)
+			display: block
+	.overlay
+		display: none
+		+pos(fix, 0 null 0 0)
+		right: 0
+		background: color-rgba($black,0.8)
+		z-index: 1000
+	.menu
+		width: 100%
+		// float: left
+		// width: calc(100% - 40px)
+		+media-breakpoint-down(lg)
+			+pos(fix, 0 null 0 0)
+			width: 280px
+			z-index: 1100
+			background: lighten($purple,40%)
+			+transition(all,0.5s)
+			+transform(translate(-100%,0))
+			&.open
+				+transform(translate(0%,0))
+		.menu-logo
+			display: none
+			+media-breakpoint-down(lg)
+				display: block
+				padding: 15px 0
+				text-align: center
+				background: $white
+				.btn-showmenu
+					display: none
+				.sitelogo
+					float: none
+				a
+					height: auto
+				img
+					height: 50px
+		.menu-wrap
+		ul.menu-link
+			+flexbox
+			+media-breakpoint-down(lg)
+				flex-wrap: wrap
+			> li
+				flex: auto
+				+media-breakpoint-down(lg)
+					width: 100%
+				&:first-child
+					+media-breakpoint-up(xl)
+						> a
+							+fs(0)
+							line-height: 2px
+							&:before
+								content: '\f015'
+								display: block
+								+fs(16rem)
+								line-height: 1
+								font-weight: normal
+								margin-top: 2px
+
+				> a
+					display: block
+					padding: 15px 0px
+					+fs(15rem)
+					line-height: 20px
+					// font-family: 'roboto condensed'
+					// color: darken($white,20%)
+					font-weight: 700
+					// letter-spacing: 1px
+					text-align: center
+					text-transform: uppercase
+					+pos(rel,null)
+					+media-breakpoint-down(lg)
+						padding: 10px 20px
+						color: $main
+						text-align: left
+					&:after
+						// content: ''
+						// +pos(abs, null 0% 0 0%)
+						// top: 0
+						// opacity: 0
+						// // height: 3px
+						// background: $bluegradient
+						// z-index: 1
+						// +transition(all,0.5s)
+				&.hassub
+					+pos(rel,null)
+					.btn-showsub
+						display: none
+						+pos(abs, 10px 20px null null)
+						line-height: 20px
+						+fs(13rem)
+						+transition(all,0.5s)
+						+media-breakpoint-down(lg)
+							display: block
+						&.active
+							+transform(scale(1,-1))
+					.sub
+						+pos(abs, 100% null null 0)
+						background: $white
+						box-shadow: 0px 5px 20px color-rgba($black,0.3)
+						min-width: 230px
+						display: none
+						+media-breakpoint-down(lg)
+							+pos(static,unset)
+							box-shadow: none
+						ul
+							li
+								a
+									display: block
+									+fs(14rem)
+									color: darken($white,60%)
+									// font-weight: 500
+									padding: 10px 20px
+								&:hover
+									a
+										color: $dblue
+										background: lighten($dblue,43%)
+								&.active
+									a
+										color: $dblue
+										font-weight: 500
+										background: lighten($dblue,40%)
+				&:hover
+					> a
+						color: $dblue
+						background: color-rgba($black,0.05)
+						&:after
+							// left: 0
+							// right: 0
+					.sub
+						+media-breakpoint-up(xl)
+							display: block
+				&.active
+					> a
+						color: $white
+						background: $bluegradient
+						&:after
+							opacity: 1
+							// left: 0
+							// right: 0
+	.search-toggle
+		float: right
+		width: 40px
+		height: 50px
+		text-align: center
+		line-height: 50px
+		+fs(16rem)
+		color: $main
+		display: none
+		+media-breakpoint-down(sm)
+			height: 60px
+			line-height: 60px
+			// +fs(18rem)
+			color: $main
+			display: block
+		&.active
+			.fa
+				&:before
+					content: '\f00d'
+
+header.header2
+	+media-breakpoint-down(lg)
+		box-shadow: 0px 10px 20px -10px color-rgba($black,0.3)
+	+media-breakpoint-up(xl)
+		.sitelogo
+			flex-wrap: wrap
+			align-items: center
+			align-content: center
+			width: 400px
+			height: 130px
+			a
+				width: 100%
+		.hotline, .fanpage, .email
+			+fs(13rem)
+			line-height: 1
+			white-space: nowrap
+			margin-top: 10px
+			a
+				+fs(13rem)
+				font-weight: 700
+				display: inline-block
+				color: $dblue
+				width: auto
+				line-height: 1
+				margin-left: 10px
+			.fa
+				line-height: 1
+				margin-right: 10px
+		.email
+			margin-left: 10px
+			a
+				color: $deeporange
+		.fanpage
+			margin-left: 10px
+			.fa
+				color: $facebook
+			a
+				color: $facebook
+				+fs(13rem)
+	.hotline, .fanpage, .email
+		+media-breakpoint-down(lg)
+			display: none

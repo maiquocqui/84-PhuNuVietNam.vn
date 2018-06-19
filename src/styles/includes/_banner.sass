@@ -1,0 +1,29 @@
+.banner
+	.slick-prev, .slick-next
+		+pos(abs, 50% null null null)
+		+transform(translate(0,-50%))
+		+fs(0)
+		z-index: 5
+		opacity: 0
+		color: $white
+		text-shadow: 0 3px 10px color-rgba($black,0.5)
+		+transition(all,0.5s)
+		&:before
+			content: ''
+			+fs(32rem)
+	.slick-prev
+		left: 30px
+		&:before
+			content: '\f104'
+	.slick-next
+		right: 30px
+		&:before
+			content: '\f105'
+	&:hover
+		.slick-prev, .slick-next
+			opacity: 0.5
+			&:hover
+				opacity: 1
+	.item
+		.img
+			display: block
